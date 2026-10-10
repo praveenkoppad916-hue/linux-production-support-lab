@@ -1,0 +1,8 @@
+2026-10-10 10:00:01 INFO payment-api Payment request received TXN-1001
+2026-10-10 10:00:02 INFO payment-api Payment successful TXN-1001 status=200
+2026-10-10 10:01:10 INFO payment-api Payment request received TXN-1002
+2026-10-10 10:01:12 ERROR payment-api Database connection timeout TXN-1002 status=500
+2026-10-10 10:02:05 ERROR payment-api Payment failed TXN-1002 status=500
+2026-10-10 10:03:15 WARN payment-api Upstream gateway slow TXN-1003 status=504
+2026-10-10 10:04:20 ERROR payment-api Gateway timeout TXN-1003 status=504
+2026-10-10 10:05:00 INFO payment-api Payment successful TXN-1004 status=200
