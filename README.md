@@ -177,6 +177,16 @@ linux-production-support-lab/
 These findings are based on fictional application logs. The underlying root causes have not been conclusively established.
 
 
+## Investigation Screenshot
+
+The following screenshot shows the successful execution of the
+automated Linux incident investigation script inside Docker.
+
+![Linux Production Support Incident Investigation](screenshots/incident-investigation.png)
+
+The script identifies application errors, HTTP 500/504 failures,
+affected transactions, and the latest application log events.
+
 
 \## Incident RCA
 
