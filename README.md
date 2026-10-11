@@ -104,6 +104,69 @@ The script identifies application errors, HTTP 500/504 failures, affected transa
 ## Incident RCA
 
 [Read the Incident RCA Report](docs/INCIDENT-RCA-001.md)
+## System Architecture
+
+```mermaid
+flowchart TD
+    A["Docker Desktop"] --> B["Ubuntu 24.04 Container"]
+    B --> C["Mounted Project Files"]
+    C --> D["Synthetic Payment Application Logs"]
+    D --> E["Bash Investigation Script"]
+    E --> F["grep / tail / wc / sort"]
+    F --> G["Error Counts and Transaction IDs"]
+    G --> H["Incident Findings"]
+    H --> I["RCA Documentation and Screenshot"]
+```
+
+### Architecture Explanation
+
+This project demonstrates Linux-based production incident troubleshooting in an isolated Docker environment.
+
+1. **Environment:** Docker runs an Ubuntu 24.04 container with the project directory mounted.
+2. **Log analysis:** A Bash script reads synthetic payment application logs and uses Linux command-line utilities to investigate failures.
+3. **Error identification:** The investigation identifies ERROR entries, HTTP 500 responses, and HTTP 504 gateway timeouts.
+4. **Transaction correlation:** Application log events are correlated using transaction identifiers.
+5. **Incident documentation:** Findings are recorded in an incident RCA report, supported by a screenshot of the executed investigation.
+
+## Interview-Ready Project Explanation
+
+### Problem Statement
+
+Production support engineers frequently investigate application failures on Linux servers. These incidents require log analysis, error identification, and transaction-level troubleshooting.
+
+### My Implementation
+
+I developed a Linux production-support troubleshooting lab using Ubuntu 24.04, Docker, and Bash scripting.
+
+The lab simulates payment-processing failures using fictional application logs. I created an automated investigation script that analyzes application events and identifies error patterns.
+
+### Verified Investigation Results
+
+| Metric                | Result             |
+| --------------------- | ------------------ |
+| Total log entries     | 8                  |
+| ERROR entries         | 3                  |
+| HTTP 500 responses    | 2                  |
+| HTTP 504 responses    | 2                  |
+| Affected transactions | TXN-1002, TXN-1003 |
+
+The logs indicate a database connection timeout associated with `TXN-1002` and an upstream gateway slowdown associated with `TXN-1003`. These are simulated incident findings, not independently confirmed infrastructure root causes.
+
+### How I Would Explain This in an Interview
+
+"I built a Linux production-support lab using Ubuntu 24.04 and Docker to simulate payment application incidents.
+
+I developed a Bash troubleshooting script to analyze application logs, identify HTTP 500 and 504 errors, and correlate affected transactions.
+
+The investigation identified eight log entries, three ERROR events, and two affected transactions.
+
+I documented the investigation in an incident RCA report and captured execution evidence.
+
+This project demonstrates my ability to use Linux command-line tools, automate repetitive troubleshooting tasks, and document production incident findings."
+
+### Skills Demonstrated
+
+**Linux · Ubuntu · Docker · Bash · grep · tail · Log Analysis · Incident Investigation · RCA**
 
 ## Skills Demonstrated
 
